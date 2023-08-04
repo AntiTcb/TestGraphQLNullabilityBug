@@ -7,9 +7,7 @@ builder.Services
 
 
 var app = builder.Build();
-
 app.MapGraphQL();
-
 app.Run();
 
 
@@ -18,7 +16,10 @@ public class SomeClass
     public string? Message { get; set; }
 }
 
-public record TestError(string? Message = default);
+public class TestError
+{
+    public string? Message { get; set; } = null;
+}
 
 public class Query
 {
